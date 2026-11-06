@@ -1,0 +1,10 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sign up | {{APP_NAME}}</title><link rel="stylesheet" href="/css/style.css"></head><body>
+<main class="auth"><div class="card wide"><a class="logo" href="/"><i></i>{{APP_NAME}}</a><h1>Create your account</h1><div id="msg" class="alert" hidden></div>
+<form id="signupForm"><b>1. Choose your plan</b><div id="planOpts"></div>
+<b style="display:block;margin-top:16px">2. Pay</b><div class="pay" id="payInfo"></div>
+<b style="display:block;margin-top:16px">3. Your details</b>
+<div class="form2"><label>Full name<input name="name" required maxlength="80" autocomplete="name"></label><label>Email (you will log in with this)<input name="email" type="email" required autocomplete="username"></label>
+<label>Password (min 8 characters)<input name="password" type="password" required minlength="8" autocomplete="new-password"></label><label>Repeat password<input name="password2" type="password" required minlength="8" autocomplete="new-password"></label>
+<label>Transaction ID (optional)<input name="txid" maxlength="40"></label><label>Payment screenshot (PNG or JPG)<input name="shot" type="file" accept="image/png,image/jpeg" required></label></div>
+<button class="btn btn-primary" style="width:100%;margin-top:10px">Submit for approval</button></form>
+<p class="muted center">Already approved? <a href="/login">Log in</a></p></div></main><script src="/js/common.js"></script><script src="/js/auth.js"></script></body></html>

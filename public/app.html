@@ -1,0 +1,23 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Dashboard | {{APP_NAME}}</title><link rel="stylesheet" href="/css/style.css"></head><body>
+<header class="appbar"><div class="wrap bar"><a class="logo" href="/app"><i></i>{{APP_NAME}}</a><div class="bar-r"><span id="planBadge" class="badge"></span><span id="usage" class="muted"></span><span id="expires" class="muted"></span><button id="logout" class="btn btn-sm btn-ghost">Log out</button></div></div></header>
+<main class="wrap"><div class="tabs"><button data-tab="find" class="on">Find jobs</button><button data-tab="tracker">Tracker</button><button data-tab="profile">My profile</button></div>
+
+<section id="tab-find"><form id="searchForm" class="panel"><div class="form2">
+<label>Job keywords<input name="keywords" required maxlength="100" placeholder="e.g. data analyst python"></label>
+<label>Location (optional)<input name="location" maxlength="80" placeholder="e.g. Lahore, Dubai, Remote"></label>
+<label class="full">Company career page links (optional)<textarea name="links" rows="2" placeholder="One link per line, e.g. https://company.com/careers"></textarea><small class="muted" id="linkHint"></small></label>
+<label>Resume (PDF, DOCX or TXT)<input name="resume" type="file" accept=".pdf,.docx,.txt"><small class="muted" id="resumeHint"></small></label>
+<label>Hide weak matches<select name="minMatch"><option value="0">Show all</option><option value="15" selected>Below 15%</option><option value="30">Below 30%</option><option value="50">Below 50%</option></select></label>
+<label class="full"><input type="checkbox" name="remember" checked>Remember my search settings and resume</label></div>
+<button class="btn btn-primary" id="searchBtn">Search jobs</button> <span id="searchState" class="muted"></span></form>
+<div id="notes"></div><div id="results"></div></section>
+
+<section id="tab-tracker" hidden><div id="due"></div><div class="panel"><div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap"><h3 style="margin:0">Your applications</h3><a class="btn btn-sm btn-outline" href="/api/apps.csv">Export CSV</a></div><div class="scroll" id="trackerBox"></div></div></section>
+
+<section id="tab-profile" hidden><form id="profileForm" class="panel"><h3>My profile</h3><p class="muted">Saved in your account. Your name is used in cover letters and your skills improve matching.</p><div class="form2">
+<label>Full name<input name="full_name" maxlength="80"></label><label>Phone (optional)<input name="phone" maxlength="30"></label>
+<label class="full">Target job title<input name="target_role" maxlength="80" placeholder="e.g. Data Analyst"></label>
+<label class="full">Skills and extra keywords<textarea name="skills" rows="3" maxlength="500" placeholder="python, sql, tableau, power bi"></textarea></label></div><button class="btn btn-primary">Save profile</button></form>
+<div class="panel"><h3>Saved resume</h3><div id="resumeBox"></div><label>Upload a new resume<input id="resumeFile" type="file" accept=".pdf,.docx,.txt"></label><button class="btn btn-outline" id="resumeSave">Save resume</button></div>
+<div class="panel"><h3>Delete my data</h3><p class="muted">Removes your saved profile and resume. Your tracked applications stay.</p><button class="btn btn-red btn-sm" id="wipe">Delete my profile data</button></div></section></main>
+<script src="/js/common.js"></script><script src="/js/app.js"></script></body></html>

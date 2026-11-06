@@ -1,0 +1,7 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Admin | {{APP_NAME}}</title><link rel="stylesheet" href="/css/style.css"></head><body>
+<header class="appbar"><div class="wrap bar"><a class="logo" href="/admin"><i></i>{{APP_NAME}} Admin</a><div class="bar-r"><span class="muted" id="fc"></span><button id="logout" class="btn btn-sm btn-ghost">Log out</button></div></div></header>
+<main class="wrap" style="padding-top:22px"><div class="tiles" id="tiles"></div>
+<h2>Pending approvals <span id="pcount" class="muted"></span></h2><div id="pending"></div>
+<h2 style="margin-top:28px">Users</h2><div class="panel"><div class="form2"><label>Search<input id="q" placeholder="Name or email"></label><label>Show<select id="flt"><option>All</option><option>Pending</option><option>Active</option><option>Expiring</option><option>Expired</option><option>Suspended</option><option>Rejected</option></select></label></div>
+<div class="scroll"><table><thead><tr><th>Name</th><th>Email</th><th>Plan</th><th>Status</th><th>Expires</th><th>Actions</th></tr></thead><tbody id="users"></tbody></table></div></div></main>
+<script src="/js/common.js"></script><script src="/js/admin.js"></script></body></html>
