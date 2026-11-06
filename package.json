@@ -7,9 +7,9 @@
     "start": "node server.js",
     "test": "node --test test/api.test.js test/ui.test.js"
   },
-  "engines": {
-    "node": ">=18"
-  },
+"engines": {
+  "node": ">=22.22.2"
+},
   "license": "UNLICENSED",
   "dependencies": {
     "better-sqlite3": "^12.0.0",
